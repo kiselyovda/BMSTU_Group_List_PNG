@@ -52,14 +52,13 @@ def get_data(url):
             driver.quit()
 
             os.replace(f"{name}.png", f"bam/{name}.png")
-            os.startfile(f"C:/Users/Даниил/OneDrive/Документы/Python Projects/BMSTU List Pars/bam/{name}.png")
+            os.startfile(f"C:/Users/Даниил/OneDrive/Документы/Python Projects/BMSTU_Group_List_PNG/BMSTU List Pars/bam/{name}.png")
 
             break
 
 
 def main():
     get_data("https://lks.bmstu.ru/schedule/list")
-
 
 
 if __name__ == '__main__':
