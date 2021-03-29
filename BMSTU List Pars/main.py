@@ -41,6 +41,7 @@ def get_data(url):
             name = replace(input("Ошибка! Введите группу заново:").upper())
 
         else:
+            print(f"Группа {name} обнаружена.\nНачинаю вывод данных!")
             options = webdriver.ChromeOptions()
             options.headless = True
             driver = webdriver.Chrome(options=options)
@@ -51,10 +52,17 @@ def get_data(url):
             driver.find_element_by_tag_name('body').screenshot(f'{name}.png')
             driver.quit()
 
+            print("Задача выполнена!")
+
             os.replace(f"{name}.png", f"bam/{name}.png")
             os.startfile(f"C:/Users/Даниил/OneDrive/Документы/Python Projects/BMSTU_Group_List_PNG/BMSTU List Pars/bam/{name}.png")
 
             break
+
+    print("Начинаю удаление файла...")
+    sleep(1)
+    os.remove(f"bam/{name}.png")
+    print(f"\nФайла {name}.png не осталось")
 
 
 def main():
