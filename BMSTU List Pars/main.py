@@ -58,11 +58,18 @@ def get_data(url):
             os.startfile(f"C:/Users/Даниил/OneDrive/Документы/Python Projects/BMSTU_Group_List_PNG/BMSTU List Pars/bam/{name}.png")
 
             break
-
-    print("Начинаю удаление файла...")
-    sleep(1)
-    os.remove(f"bam/{name}.png")
-    print(f"\nФайла {name}.png не осталось")
+    while True:
+        ask = input("Удалить файл (да/нет)?: ").lower()
+        if ask == "да":
+            print("Удаляю файл...")
+            os.remove(f"bam/{name}.png")
+            print(f"\nФайла {name}.png не осталось")
+            break
+        elif ask == "нет":
+            print(f"OK...\nФайл {name}.png находится в папке bam")
+            break
+        else:
+            print("Команда введена не верна. Попробуйте еще раз.")
 
 
 def main():
