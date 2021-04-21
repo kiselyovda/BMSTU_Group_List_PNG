@@ -1,9 +1,11 @@
-import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
 import os
+import requests
+from selenium import webdriver
 from time import sleep
 
+if not os.path.isdir("bam"):
+    os.makedirs("bam")
 
 def replace(string):
     rep = [" "]
@@ -55,7 +57,7 @@ def get_data(url):
             print("Задача выполнена!")
 
             os.replace(f"{name}.png", f"bam/{name}.png")
-            os.startfile(f"C:/Users/Даниил/OneDrive/Документы/Python Projects/BMSTU_Group_List_PNG/BMSTU List Pars/bam/{name}.png")
+            os.startfile(f"C://Users/Даниил/OneDrive/Документы/Python Projects/BMSTU_Group_List_PNG/BMSTU List Pars/bam/{name}.png")
 
             break
     while True:
