@@ -74,9 +74,6 @@ def get_data(url):
             print("Команда введена не верна. Попробуйте еще раз.")
 
 
-def main():
-    get_data("https://lks.bmstu.ru/schedule/list")
-
-
 if __name__ == '__main__':
-    main()
+    get_data("https://lks.bmstu.ru/schedule/list")
+    
